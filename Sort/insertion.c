@@ -22,9 +22,9 @@ void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
             if (j - 2 < 0) {
                 void *right = list + (size * (j - 1));
                 comparison_result result = compare(current, right);
-                bool shouldMove = result == same || result == descending;
+                bool should_move = result == same || result == descending;
                 
-                if (shouldMove) {
+                if (should_move) {
                     memmove(list + (size * j), list + (size * (j - 1)), (i - (j - 1)) * size);
                     memcpy(list + (size * (j - 1)), current, size);
                     break;
@@ -33,14 +33,14 @@ void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
                 void *right = list + (size * (j - 1));
                 void *left = list + (size * (j - 2));
                 
-                comparison_result leftResult = compare(current, left);
-                comparison_result rightResult = compare(current, right);
+                comparison_result left_result = compare(current, left);
+                comparison_result right_result = compare(current, right);
                 
-                bool shouldMoveLeft = leftResult == ascending || leftResult == same;
-                bool shouldMoveRight = rightResult == descending || rightResult == same;
-                bool shouldMove = shouldMoveLeft && shouldMoveRight;
+                bool should_move_left = left_result == ascending || left_result == same;
+                bool should_move_right = right_result == descending || right_result == same;
+                bool should_move = should_move_left && should_move_right;
                 
-                if (shouldMove) {
+                if (should_move) {
                     memmove(list + (size * j), list + (size * (j - 1)), (i - (j - 1)) * size);
                     memcpy(list + (size * (j - 1)), current, size);
                     break;
