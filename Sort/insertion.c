@@ -15,7 +15,7 @@
 
 void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
     for (intmax_t i = 0; i < n; i++) {
-        void *current = malloc(size);
+        void *current = calloc(1, size);
         memcpy(current, list + (size * i), size);
         
         for (intmax_t j = i; j > 0; j--) {

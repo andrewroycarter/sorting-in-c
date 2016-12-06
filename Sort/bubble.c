@@ -25,7 +25,7 @@ void bubble_sort(void *list, intmax_t n, size_t size, comparator compare) {
             
             comparison_result result = compare(lhs, rhs);
             if (result == ascending) {
-                void *swap = malloc(size);
+                void *swap = calloc(1, size);
                 memcpy(swap, lhs, size);
                 memcpy(lhs, rhs, size);
                 memcpy(rhs, swap, size);
