@@ -13,13 +13,13 @@
 
 #include "bubble.h"
 
-void bubble_sort(void *list, int64_t n, size_t size, CompareFunction compare) {
+void bubble_sort(void *list, intmax_t n, size_t size, CompareFunction compare) {
     bool sorted = false;
     
     while (!sorted) {
         sorted = true;
         
-        for (int64_t i = 0; i < n - 1; i++) {
+        for (intmax_t i = 0; i < n - 1; i++) {
             void *lhs = list + (size * i);
             void *rhs = list + (size * (i + 1));
             

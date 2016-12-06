@@ -9,6 +9,5 @@
 #pragma once
 
 #include "utility.h"
-#include <inttypes.h>
 
-void insertion_sort(void *list, int64_t n, size_t size, CompareFunction compare);
+void insertion_sort(void *list, intmax_t n, size_t size, CompareFunction compare);

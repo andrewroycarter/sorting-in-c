@@ -17,11 +17,11 @@ typedef enum {
 } comparison_result;
 
 typedef comparison_result (*CompareFunction)(const void *lhs, const void *rhs);
-typedef void (*SortFunction)(void *list, int64_t n, size_t size, CompareFunction compare);
-typedef void (*ListPrintFunction)(const void *list, int64_t n, size_t size);
+typedef void (*SortFunction)(void *list, intmax_t n, size_t size, CompareFunction compare);
+typedef void (*ListPrintFunction)(const void *list, intmax_t n, size_t size);
 
-comparison_result compare_int64_t(const void *lhs, const void *rhs);
+comparison_result compare_intmax_t(const void *lhs, const void *rhs);
 
-void pretty_print_int64_t(const void *list, int64_t n, size_t size);
+void pretty_print_intmax_t(const void *list, intmax_t n, size_t size);
 
-void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, int64_t n, size_t size);
+void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, intmax_t n, size_t size);

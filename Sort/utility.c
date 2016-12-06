@@ -13,20 +13,20 @@
 
 #include "utility.h"
 
-void pretty_print_int64_t(const void *list, int64_t n, size_t size) {
-    for (int64_t i = 0; i < n; i++) {
+void pretty_print_intmax_t(const void *list, intmax_t n, size_t size) {
+    for (intmax_t i = 0; i < n; i++) {
         if (i != 0) {
             printf(", ");
         }
-        int64_t value = *((int64_t *)list + i);
-        printf("%" PRId64, value);
+        intmax_t value = *((intmax_t *)list + i);
+        printf("%" PRIdMAX, value);
     }
     printf(".\n");
 }
 
-comparison_result compare_int64_t(const void *lhs, const void *rhs) {
-    int64_t left = *((int64_t *)(lhs));
-    int64_t right = *((int64_t *)(rhs));
+comparison_result compare_intmax_t(const void *lhs, const void *rhs) {
+    intmax_t left = *((intmax_t *)(lhs));
+    intmax_t right = *((intmax_t *)(rhs));
     
     comparison_result result = same;
     
@@ -46,7 +46,7 @@ void create_list(int64_t *dest, int64_t n) {
     }
 }
 
-void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, int64_t n, size_t size) {
+void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, intmax_t n, size_t size) {
     void *listCopy = calloc(n, size);
     memcpy(listCopy, list, size * n);
     

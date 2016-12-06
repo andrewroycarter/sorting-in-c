@@ -13,12 +13,12 @@
 
 #include "insertion.h"
 
-void insertion_sort(void *list, int64_t n, size_t size, CompareFunction compare) {
-    for (int64_t i = 0; i < n; i++) {
+void insertion_sort(void *list, intmax_t n, size_t size, CompareFunction compare) {
+    for (intmax_t i = 0; i < n; i++) {
         void *current = malloc(size);
         memcpy(current, list + (size * i), size);
         
-        for (int64_t j = i; j > 0; j--) {
+        for (intmax_t j = i; j > 0; j--) {
             if (j - 2 < 0) {
                 void *right = list + (size * (j - 1));
                 comparison_result result = compare(current, right);
