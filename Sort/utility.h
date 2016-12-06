@@ -9,6 +9,7 @@
 #pragma once
 
 #include <inttypes.h>
+#include <stdbool.h>
 
 typedef enum {
     ascending,
@@ -16,12 +17,12 @@ typedef enum {
     same
 } comparison_result;
 
-typedef comparison_result (*CompareFunction)(const void *lhs, const void *rhs);
-typedef void (*SortFunction)(void *list, intmax_t n, size_t size, CompareFunction compare);
-typedef void (*ListPrintFunction)(const void *list, intmax_t n, size_t size);
+typedef comparison_result (*comparator)(const void *lhs, const void *rhs);
+typedef void (*sorter)(void *list, intmax_t n, size_t size, comparator compare);
+typedef void (*list_printer)(const void *list, intmax_t n, size_t size);
 
 comparison_result compare_intmax_t(const void *lhs, const void *rhs);
 
 void pretty_print_intmax_t(const void *list, intmax_t n, size_t size);
 
-void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, intmax_t n, size_t size);
+void profile_sorter(sorter sort, comparator compare, list_printer printer, bool print_list, const void *list, intmax_t n, size_t size);

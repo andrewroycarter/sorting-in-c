@@ -10,4 +10,4 @@
 
 #include "utility.h"
 
-void bubble_sort(void *list, intmax_t n, size_t size, CompareFunction compare);
+void bubble_sort(void *list, intmax_t n, size_t size, comparator compare);

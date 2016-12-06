@@ -19,13 +19,13 @@
 
 
 int main(int argc, const char * argv[]) {
-    intmax_t n = 5;
+    intmax_t n = 10;
     
     intmax_t *list = calloc(n, sizeof(intmax_t));
     create_list(list, n);
     
-    profile_sort(bubble_sort, compare_intmax_t, pretty_print_intmax_t, list, n, sizeof(*list));
-    profile_sort(insertion_sort, compare_intmax_t, pretty_print_intmax_t, list, n, sizeof(*list));
+    profile_sorter(bubble_sort, compare_intmax_t, pretty_print_intmax_t, true, list, n, sizeof(*list));
+    profile_sorter(insertion_sort, compare_intmax_t, pretty_print_intmax_t, true, list, n, sizeof(*list));
     
     free(list);
     

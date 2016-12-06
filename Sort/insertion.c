@@ -13,7 +13,7 @@
 
 #include "insertion.h"
 
-void insertion_sort(void *list, intmax_t n, size_t size, CompareFunction compare) {
+void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
     for (intmax_t i = 0; i < n; i++) {
         void *current = malloc(size);
         memcpy(current, list + (size * i), size);

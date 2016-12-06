@@ -10,6 +10,7 @@
 #include <inttypes.h>
 #include <memory.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "utility.h"
 
@@ -46,15 +47,28 @@ void create_list(int64_t *dest, int64_t n) {
     }
 }
 
-void profile_sort(SortFunction sort_function, CompareFunction compare, ListPrintFunction print_function, const void *list, intmax_t n, size_t size) {
+void profile_sorter(sorter sort, comparator compare, list_printer printer, bool print_list, const void *list, intmax_t n, size_t size) {
     void *listCopy = calloc(n, size);
     memcpy(listCopy, list, size * n);
     
-    puts("Sorting:");
-    print_function(listCopy, n, size);
-    sort_function(listCopy, n, size, compare);
-    puts("Sorted:");
-    print_function(listCopy, n, size);
-
+    puts("Sorting...");
+    
+    if (print_list) {
+        printer(listCopy, n, size);
+    }
+    
+    clock_t begin = clock();
+    sort(listCopy, n, size, compare);
+    clock_t end = clock();
+    double timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
+    
+    printf("Sorted in %f seconds.\n", timeSpent);
+    
+    if (print_list) {
+        printer(listCopy, n, size);
+    }
+    
+    puts("");
+    
     free(listCopy);
 }
