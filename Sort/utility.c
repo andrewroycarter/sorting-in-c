@@ -40,10 +40,10 @@ comparison_result compare_intmax_t(const void *lhs, const void *rhs) {
     return result;
 }
 
-void create_list(int64_t *dest, int64_t n) {
-    for (int64_t i = 0; i < n; i++) {
-        int64_t random = arc4random() % 10;
-        memmove(dest + i, &random, sizeof(int64_t));
+void create_list(intmax_t *dest, intmax_t n) {
+    for (intmax_t i = 0; i < n; i++) {
+        intmax_t random = arc4random() % 10;
+        memmove(dest + i, &random, sizeof(intmax_t));
     }
 }
 
