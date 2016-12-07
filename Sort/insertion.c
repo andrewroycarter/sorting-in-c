@@ -14,8 +14,9 @@
 #include "insertion.h"
 
 void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
+    void *current = calloc(1, size);
+
     for (intmax_t i = 0; i < n; i++) {
-        void *current = calloc(1, size);
         memcpy(current, list + (size * i), size);
         
         for (intmax_t j = i; j > 0; j--) {
@@ -47,7 +48,7 @@ void insertion_sort(void *list, intmax_t n, size_t size, comparator compare) {
                 }
             }
         }
-        
-        free(current);
     }
+    
+    free(current);
 }
