@@ -27,9 +27,9 @@ void merge_sort(void *list, intmax_t n, size_t size, comparator compare) {
         void *right_list = calloc(right_n, size);
         memcpy(right_list, list + (size * left_n), size * right_n);
 
-        int64_t i = 0;
-        int64_t j = 0;
-        int64_t k = 0;
+        intmax_t i = 0;
+        intmax_t j = 0;
+        intmax_t k = 0;
         
         while (i < left_n && j < right_n) {
             comparison_result result = compare(left_list + (i * size), right_list + (j * size));
