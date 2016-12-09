@@ -11,6 +11,7 @@
 		226DCBDD1DF60F6E00910F3F /* bubble.c in Sources */ = {isa = PBXBuildFile; fileRef = 226DCBDB1DF60F6E00910F3F /* bubble.c */; };
 		226DCBE01DF60F7600910F3F /* insertion.c in Sources */ = {isa = PBXBuildFile; fileRef = 226DCBDE1DF60F7600910F3F /* insertion.c */; };
 		227A07191DEE27D800DAA917 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 227A07181DEE27D800DAA917 /* main.c */; };
+		22C824F31DFA033E00B74736 /* merge.c in Sources */ = {isa = PBXBuildFile; fileRef = 22C824F11DFA033E00B74736 /* merge.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		226DCBDF1DF60F7600910F3F /* insertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = insertion.h; sourceTree = "<group>"; };
 		227A07151DEE27D800DAA917 /* Sort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sort; sourceTree = BUILT_PRODUCTS_DIR; };
 		227A07181DEE27D800DAA917 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		22C824F11DFA033E00B74736 /* merge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = merge.c; sourceTree = "<group>"; };
+		22C824F21DFA033E00B74736 /* merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = merge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		226DCBD81DF60F5300910F3F /* Sort */ = {
 			isa = PBXGroup;
 			children = (
+				22C824F01DFA033000B74736 /* merge */,
 				226DCBDA1DF60F5C00910F3F /* Insertion */,
 				226DCBD91DF60F5900910F3F /* Bubble */,
 			);
@@ -107,6 +111,15 @@
 				227A07181DEE27D800DAA917 /* main.c */,
 			);
 			path = Sort;
+			sourceTree = "<group>";
+		};
+		22C824F01DFA033000B74736 /* merge */ = {
+			isa = PBXGroup;
+			children = (
+				22C824F21DFA033E00B74736 /* merge.h */,
+				22C824F11DFA033E00B74736 /* merge.c */,
+			);
+			name = merge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +184,7 @@
 				226DCBD61DF60E3400910F3F /* utility.c in Sources */,
 				227A07191DEE27D800DAA917 /* main.c in Sources */,
 				226DCBE01DF60F7600910F3F /* insertion.c in Sources */,
+				22C824F31DFA033E00B74736 /* merge.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
